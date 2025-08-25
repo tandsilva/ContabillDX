@@ -1,7 +1,5 @@
 package br.com.lgpd.model;
 
-
-
 import jakarta.persistence.*;
 import lombok.*;
 

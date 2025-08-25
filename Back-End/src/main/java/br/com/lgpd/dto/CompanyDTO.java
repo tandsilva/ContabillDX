@@ -9,10 +9,12 @@ import java.util.Date;
 @AllArgsConstructor
 @Builder
 public class CompanyDTO {
+
     private Long id;
     private String name;
     private String cnpj;
 
+    // Campos legados (se ainda estiver usando diretamente)
     private String tipoInscricaoEstabelecimento;
     private String cnpjCpf;
     private String numeroCEI;
@@ -28,8 +30,16 @@ public class CompanyDTO {
     private String cnaePreponderante;
     private String bancoDepositoFGTS;
 
+    // Novo modelo modular
     private CompanyFiscalInfoDTO fiscalInfo;
 
-    private Long perfilEmpresaId; // ID do perfil associado
+    // Relacionamento com PerfilEmpresa
+    private Long perfilEmpresaId;
 
+    // Construtor personalizado para uso simples
+    public CompanyDTO(Long id, String name, String cnpj) {
+        this.id = id;
+        this.name = name;
+        this.cnpj = cnpj;
+    }
 }
